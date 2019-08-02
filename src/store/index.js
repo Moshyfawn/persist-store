@@ -5,8 +5,6 @@ import createSagaMiddleware from 'redux-saga'
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
-// import { loadState, saveState } from './localStorage'
-
 import rootSaga from './saga'
 
 import user from './user'
@@ -38,12 +36,6 @@ export default function configureStore() {
   let persistor = persistStore(store)
 
   sagaMiddleware.run(rootSaga)
-
-  // store.subscribe(() => {
-  //   saveState({
-  //     profile: store.getState().user.profile
-  //   })
-  // })
 
   return { store, persistor }
 }
