@@ -17,6 +17,8 @@ function App({ signIn, profile }) {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
+
   return {
     profile: state.user.profile,
     isLoading: state.user.isLoading
